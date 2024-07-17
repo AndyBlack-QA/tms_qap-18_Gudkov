@@ -3,23 +3,25 @@ class Bouquet:
         self.flowers = []
         self.accessories = []
 
-    def add_flower(self,flower):
+    def add_flower(self, flower):
         self.flowers.append(flower)
-    def remove_flower(self,flower):
+
+    def remove_flower(self, flower):
         self.flowers.remove(flower)
 
-    def add_accessory(self,accessory):
+    def add_accessory(self, accessory):
         self.accessories.append(flower)
+
     def remove_accessory(self, accessory):
         self.accessories.remove(flower)
 
     def bouquet_cost(self):
-        bouquet_cost = sum (flower.cost for flower in self.flowers) + (accessory.cost for accessory in self.accessories)
+        bouquet_cost = sum(flower.cost for flower in self.flowers) + (accessory.cost for accessory in self.accessories)
         return bouquet_cost
 
     def fading_time(self, flowers):
-        total_live_lenght = (sum (flower.live_lenght for flower in self.flowers) )
-        avg_lifetime = total_live_lenght / len (self.flowers)
+        total_live_lenght = (sum(flower.live_lenght for flower in self.flowers))
+        avg_lifetime = total_live_lenght / len(self.flowers)
         return avg_lifetime
 
     def sort_flowers(self, key):
@@ -43,3 +45,4 @@ class Bouquet:
         if min_stem_length is not None:
             results = [flower for flower in results if flower.stem_length >= min_stem_length]
         return results
+
